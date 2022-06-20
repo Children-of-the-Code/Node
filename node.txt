@@ -1,0 +1,22 @@
+Previously, we've been using a combination of html, css, and javascript to run javascript in the browser
+javascript always had to be connected by a script tag, and the page runs on the client side
+in my web browser
+
+At some point, people wanted to make something that can run javascript without the need for a browser
+and running javascript, potentially, as a server sided technology
+
+Node comes with NPM (node package manager) which allows us to install new dependencies for our project
+such as the ones we will be using
+
+npm init: will initialize a project using npm and walk us through some setup
+
+typescript: the main thing that TS added for us is strongly typed functionality
+typescript must be first transpiled to js using the tsc command
+a few more things:
+-interfaces (a guarantee of certain behavior.. oftentimes referred to as a contract of behavior)
+    -in TS, it is especially used for mandating that data is organized in a certain way (contains certain variables etc)
+-access modifiers
+    -public (default)
+    -private (only access within class)
+    -protected (only accessed within class or by children of this class)
+-decorators (like annotations in java)
