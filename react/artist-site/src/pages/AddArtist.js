@@ -25,7 +25,7 @@ export class AddArtist extends React.Component {
     }
     submit(event){
         let name = this.state.inputValue;
-        fetch("https://tedsartists.azurewebsites.net/artist", {
+        fetch("https://isagames.azurewebsites.net/customer/new", {
             method: "POST",
             mode: "cors",
             headers: {
@@ -34,7 +34,8 @@ export class AddArtist extends React.Component {
               },
             body: JSON.stringify(
                 {
-                "name":name
+                "username":"abc2",
+                "password":"pass2"
             })
         });
     }

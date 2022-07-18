@@ -1,0 +1,65 @@
+Waterfall methodology
+    -software development progresses in stages, and we dont move on until we fully complete a particular stage
+    eg, requirements gathering, planning, developing, testing, deployment, maintenance
+
+    we have absolutely nothing until potentially months after we start! so... if something changes
+    (big technological setback, requirements change, budget changes, our stakeholders (investors) hate us, etc)
+
+Agile development + devops
+    particularly Scrum, which is one form of Agile
+    We select the most critical features from the product backlog and complete a 2-week sprint on those features
+    Scrum in particular revolves around ceremonies - sprint planning meeting, daily standups, sprint retrospectives
+        velocity = the amount of user stories that our team is capable of completing per sprint
+        user story = a way for non-technical people to communicate project requirements to technical people
+            they follow a format like "As a _____ I want to _____ so that I can _____"
+            eg: 
+            As a admin, I want to be able to assign deals so that I can have those deals be visible to end-users.
+            As a user, I want to be able to access products with a sub 100ms delay so that I don't want to leave the page.
+    
+    Rather than completing all of the steps one-by-one, we rather complete a micrososm of the development process
+    within our spring
+    so, within our spring, we can perform development, testing, deployment on a small subset of the total features
+
+    the main advantage being that we have greatly increased flexibility wrt requirements
+
+    SO, that also means that our development needs to change slightly, because we always will have a semi-complete product
+    which we must treat as complete.
+
+    Meaning, we need a real production environment for our app. So, we need devops
+
+    Our devops pipeline (github actions, azure pipeline, jenkins) runs scripts on our code such that we can deploy it without
+    the assistance of humans.
+
+    CI/CD:
+    CI: continuous integration - all code is always being combined into a larger codebase (git, merging, forking)
+    CD: continuous delivery - all code is automatically tested and passed to a human for final testing or for deployment
+    CD: continuous deployment - pipelines! once we push code, it is tested and deployed to prod completely automatically
+
+    Devops is both a philosophy and team. You need a devops team to set up pipelines, cloud services so that the developers
+    can work as efficiently as possible.
+
+    Cloud platforms and how great they are...
+    AWS - amazon web services
+    azure - SQL servers, VMs, App services, Pipelines
+        Infrastructure as a services - VMs 
+            effectively just buying a computer that we can do whatever we like on
+        Platfrom as a service - SQL servers, App services, pipelines 
+            purchasing some development platform that we have a large degree of control over, but not OS- level control
+        Software as a service 
+            Salesforce, appian, servicenow, pega
+            Development environments that make business applications extremely fast to make, but people need
+                to have a specialization in it
+                (EG your timesheets portal is made in Salesforce)
+    GCP
+
+    As for pipelines... we don't need to think too hard about, but the key element is what is the pipeline actually doing?
+        - we designate our configurations for java version and such, so that way the cloud computer knows how to actually
+        compile our code (this would change if we eg tried to make a frontend pipeline)
+        - maven packages our project 
+            maven is not just for dependencies! we need to be able to package our app together ,  while still including the
+            dependencies, into a jar file (a single file that contains a whole java application)
+        - transfer our project to azure app services and runs it
+            your project is actually just running in docker
+
+    docker
+        virtualization tool which replaces the need for a VM by being more lightweight and transferable

@@ -70,7 +70,6 @@ export function CheckoutPage(props:any) {
             //I will display a component for each checkout item here.
                 checkoutItems.map((item: { itemName: string; quantity : number })=><Item key={item.itemName+""+item.quantity} item = {item} decrement = {decrementQuantity} increment = {incrementQuantity}/>)
             }
-
         </>
     )
 
